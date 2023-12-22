@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        input[type="text"]{
+            width: 15%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+            width: 10%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+     
+<h1>{{title}}</h1>
+<h3>Список докторов:</h3>
+<table>
+    <tr>
+        <th>Имя</th>
+        <th>Специальность</th>
+    </tr>
+    {{#each doctors}} 
+    <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.spec}}</td>
+    </tr>
+    {{/each}}
+</table>
+
+<h1>Введите данные</h1>
+    <form method="post">
+        <label>Имя врача</label><br>
+        <input type="text" name="userName" /><br><br>
+        <label>Дату записи "YYYY-mm-ddTHH:MM:ss"</label><br>
+        <input type="text" name="date" /><br><br>
+        <input type="submit" value="Отправить" />
+    </form>
+    {{#if error}}
+        <h3>Неверно указано имя врача или дата записи к врачу!</h3>
+    {{/if}}
+</body>
+</html>

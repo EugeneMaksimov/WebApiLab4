@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+    <style>
+        input[type="submit"] {
+            width: 10%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+     
+<h1>{{title}}</h1>
+<h3>Список записей:</h3>
+<table> <!-- Added table tag -->
+    <tr> <!-- Added table row for header -->
+        <th>Врач</th>
+        <th>Специальность</th>
+        <th>Дата записи</th>
+    </tr>
+    {{#each notes}} 
+        <tr> 
+            <td>{{this.doctor.name}}</td>
+            <td>{{this.doctor.spec}}</td>
+            <td>{{this.date}}</td>
+        </tr>
+    {{/each}}
+</table>
+<form method="post">
+    <input type="submit" value="Добавить" />
+</form> 
+

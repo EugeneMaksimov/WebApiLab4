@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Регистрация</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form method="post">
+        <h1>Введите данные</h1>
+        <label>Логин</label><br>
+        <input type="text" name="userLogin" /><br><br>
+        <label>Пароль</label><br>
+        <input type="password" name="userPassword" /><br><br>
+        <input type="submit" value="Отправить" />
+    </form>
+</body>
+
+</html>
